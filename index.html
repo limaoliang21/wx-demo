@@ -102,7 +102,7 @@
             oP.style.color= 'rgb(' + r + ',' + g + ',' + b + ')';
         },30);
         //作品
-        var oPicture=document.getElementById('picture');
+        /*var oPicture=document.getElementById('picture');
         var aLi=oPicture.children;
         aLi[0].onclick=function(){
             window.open('3Dpicture.html');
@@ -112,8 +112,43 @@
         }
         aLi[2].onclick=function(){
             window.open('3Dpicture.html');
-        }
-
+        }*/
+        var oUl3d=document.getElementById('ul3d');
+        var x=0;
+        var y=0;
+        document.onmousedown=function(ev){
+            var disX=ev.clientX-y;
+            var disY=ev.clientY-x;
+            document.onmousemove=function(ev){
+                x=ev.clientY-disY;
+                y=ev.clientX-disX;
+                oUl3d.style.transform='perspective(800px) rotateX('+-x+'deg) rotateY('+y+'deg)';
+            };
+            document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmouseup=null;
+            };
+            return false;
+        };
+        var aLi=oUl3d.children;
+        aLi[0].onclick=function(){
+            window.open('html/3Dpicture.html');
+        };
+        aLi[1].onclick=function(){
+            window.open('html/3Dcarousel.html');
+        };
+        aLi[2].onclick=function(){
+            window.open('html/iPhone.html');
+        };
+        aLi[3].onclick=function(){
+            window.open('html/CountDown.html');
+        };
+        aLi[4].onclick=function(){
+            window.open('html/3Dpicture.html');
+        };
+        aLi[5].onclick=function(){
+            window.open('css/360movies.html');
+        };
     }
 </script>
 </head>
@@ -136,15 +171,7 @@
                    <li><a href="#">4444</a></li>
                </ul>
            </div>
-           <div class="header-right">
-                <!--<ul>
-                    <li>让</li>
-                    <li>我</li>
-                    <li>们</li>
-                    <li>旋</li>
-                    <li>转</li>
-                </ul>-->
-           </div>
+           <div class="header-right"></div>
         </div>
     </div>
 <!--自我介绍-->
@@ -161,7 +188,7 @@
         <h4>What are you doing?</h4>
         <p id="p">听说世界那么大！让我们一起搜一下吧！</p>
         <div class="search-left">
-            <img src="img/service-2.png">
+            <img src="img/service-1.png">
         </div>
         <div class="search-right">
             <div class="frame" id="frame">
@@ -173,16 +200,24 @@
 <!--作品-->
     <div class="carousel" id="works">
         <p>Display of works</p>
-        <ul id="picture">
+        <!--<ul id="picture">
             <li>3D图片环</li>
             <li>3D轮播图</li>
             <li>564646</li>
+        </ul>-->
+        <img src="img/service-2.png">
+        <ul id="ul3d">
+            <li class="front">3D图片环</li>
+            <li class="back">3D轮播图</li>
+            <li class="left">iPhone</li>
+            <li class="right">倒计时</li>
+            <li class="top">上面</li>
+            <li class="bottom">360影视</li>
         </ul>
     </div>
 <!--回到顶部-->
     <div class="totop" id="totop"><img src="img/top.png"></div>
 <!--背景音乐-->
-    <audio controls autoplay class="music" src="nslf.mp3" ></audio>
-
+    <audio  autoplay  src="PerfectWorld.mp3" ></audio>
 </body>
 </html>
