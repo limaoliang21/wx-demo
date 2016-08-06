@@ -1,0 +1,79 @@
+* {padding:0; margin:0; list-style:none; text-decoration:none;}
+.clearfix:after{display:block; clear:both; content:'';}
+.clearfix {zoom:1;}
+/*回到顶部*/
+a {color:#ccc; font-size:25px;}
+.totop {width:50px; height:70px; background:red; box-shadow:1px 10px 10px #000; position:fixed; right:20px; bottom:50px; display:none; z-index:888;}
+.totop img {width:100%; height:100%; border-radius:15px; cursor:pointer;}
+.music {width:300px; height:80px;}
+/*导航*/
+.header {width:100%; height:800px; position:relative;}
+.banner {width:100%; height:100%;}
+.log {width:95px; height:85px; background:url("../img/logo-2.png") no-repeat; position:absolute; top:100px; left:50%; margin-left:-48px;}
+.header h2 {width:100%; color:#fff; font-size:30px; position:absolute; top:200px; text-align:center;}
+.header h1 {width:100%;color:#fff; font-size:50px; position:absolute; top:280px; text-align:center;}
+.header .on {width:97px; height:108px; position:absolute; top:400px; left:50%; margin-left:-49px;}
+.header-fixed {width:100%; height:100px; position:absolute; left:0; bottom:30px;}
+.header-home {width:100%; height:100px; position:fixed; top:0px; left:0px; z-index:999; background:#222; opacity:.9; filter:alpha(opacity:90);}
+.header-left span {width:68px; height:61px; background:url("../img/logo-1.png") no-repeat; position:absolute; left:100px; top:25px;}
+.header-left ul {width:620px; height:61px; position:absolute; left:200px; top:25px;}
+.header-left ul li {width:80px; float:left; text-align:center; line-height:60px; padding:0px 20px; font-weight:bold;}
+.header-left a {position:relative; text-shadow:1px 2px 3px #ccc; transition:1s all ease;}
+.header-left a:hover {color:red; text-shadow:1px 2px 3px yellow; font-size:30px;}
+.header-right ul {width:400px; height:80px; position:absolute; right:100px; top:10px;}
+.header-right ul li {width:60px; height:60px; float:left; margin:10px; border-radius:50%; text-shadow:1px 2px 3px yellow; text-align:center; line-height:60px; color:#fff; font-size:38px; font-family:"华文新魏";}
+.header-right ul li:hover {transform:rotate(360deg);}
+/*关于我*/
+.about {width:100%; height:688px; background:url("../img/about-banner.jpg") no-repeat; position:relative;}
+.about h3 {width:100%; color:#fff; font-size:35px; font-family:"微软雅黑"; position:absolute; top:48px; text-align:center;}
+.introduce {width:80%; height:500px; background:#333; position:absolute; top:138px; left:50%; margin-left:-40%; border-radius:15px;}
+.photo {width:225px; height:300px; position:absolute; left:30px; top:100px;}
+.photo img {width:225px; height:300px; box-shadow:1px 10px 10px #ccc; border-radius: 15px; opacity:.3; cursor:pointer;}
+.word {width:70%; height:400px; position:absolute; right:30px; top:50px;}
+.word span {width:40px; height:40px; display:inline-block; opacity:0; font-size:35px; color:#fff; font-family:"华文新魏";}
+/*搜索*/
+.search {width:100%; height:750px; background:#222; position:relative;}
+.hexa1 {width:136px; height:155px; position:absolute; top:100px; left:50%; margin-left:-68px;}
+.search h4 {width:100%; font-size:42px; text-align:center; color:crimson; font-family:"微软雅黑"; position:absolute; top:100px;}
+.search p {width:100%; font-size:38px; font-family:"华文彩云"; text-align:center; position:absolute; top:180px;}
+.search-left {width:50%; height:500px; position:absolute; top:300px;}
+.search-left img {margin-left:200px;}
+.search-right {width:50%; height:500px; position:absolute; right:0; top:300px;}
+.frame {width:500px; height:480px; margin-left:100px;}
+.frame input {width:500px; height:42px; font-size:20px; text-indent:10px;}
+.frame ul {width:502px; border:1px solid #ccc;}
+.frame ul li {width:502px; height:28px; line-height:28px; font-size:18px; color:#fff; text-indent:10px;}
+.frame ul li:hover {background:#a5bcff; cursor:pointer;}
+/*作品*/
+.carousel {width:100%; height:680px; background:#ccc; position:relative;}
+.carousel p {font-size:58px; text-align:center; line-height:180px; font-family:"华文新魏";}
+.carousel ul {width:100%; height:500px; overflow:hidden;}
+.carousel ul li {width:300px; height:300px; text-align:center; line-height:300px; font-size:50px; font-family:"华文新魏"; border:2px solid #222; float:left; margin:70px;
+    border-radius:30%; box-shadow:0 0 30px #000; text-shadow:1px 2px 3px #000;
+    transition:1s all ease;
+    background:-webkit-linear-gradient(left,yellow,green,red,orange,skyblue);
+    -webkit-background-clip:text;
+    color:rgba(0,0,0,0);
+    overflow:hidden;  cursor:pointer;
+}
+.carousel ul li:hover {transform:rotate(360deg);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
