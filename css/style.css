@@ -14,8 +14,8 @@ a {color:#ccc; font-size:25px;}
 .header .on {width:97px; height:108px; position:absolute; top:400px; left:50%; margin-left:-49px;}
 .header-fixed {width:100%; height:100px; position:absolute; left:0; bottom:30px;}
 .header-home {width:100%; height:100px; position:fixed; top:0px; left:0px; z-index:999; background:#222; opacity:.9; filter:alpha(opacity:90);}
-.header-left span {width:68px; height:61px; background:url("../img/logo-1.png") no-repeat; position:absolute; left:100px; top:25px;}
-.header-left ul {width:620px; height:61px; position:absolute; left:200px; top:25px;}
+.header-left span {width:68px; height:61px; background:url("../img/logo-1.png") no-repeat; position:absolute; left:260px; top:25px;}
+.header-left ul {width:620px; height:61px; position:absolute; left:380px; top:25px;}
 .header-left ul li {width:80px; float:left; text-align:center; line-height:60px; padding:0px 20px; font-weight:bold;}
 .header-left a {position:relative; text-shadow:1px 2px 3px #ccc; transition:1s all ease;}
 .header-left a:hover {color:red; text-shadow:1px 2px 3px yellow; font-size:30px;}
@@ -40,7 +40,7 @@ a {color:#ccc; font-size:25px;}
 .search-right {width:50%; height:500px; position:absolute; right:0; top:300px;}
 .frame {width:500px; height:480px; margin-left:100px;}
 .frame input {width:500px; height:42px; font-size:20px; text-indent:10px;}
-.frame ul {width:502px; border:1px solid #ccc;}
+.frame ul {width:502px; -border:1px solid #ccc;}
 .frame ul li {width:502px; height:28px; line-height:28px; font-size:18px; color:#fff; text-indent:10px;}
 .frame ul li:hover {background:#a5bcff; cursor:pointer;}
 /*作品*/

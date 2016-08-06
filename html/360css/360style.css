@@ -12,7 +12,7 @@ img {vertcal-align:top;}
 .fr{float:right;}
 .clearfix:after{display:block; content:''; clear:both;}
 .clearfix{zoom:1;}
-input,textarea {outline:none;}
+textarea {outline:none;}
 .box {width:100%; height:70px; border-bottom:2px solid #47c732;}
 .box .boss {width:1010px; height:70px; margin:0 auto;}
 .box .boss .one {margin-top:13px;}
@@ -197,12 +197,3 @@ input,textarea {outline:none;}
 .box13 .one .one1 {border-right:none;}
 .box13 .two {width:683px; height:30px; margin:0 auto;}
 .box13 .two a {font-size:12px; margin-top:20px; padding-right:35px;}
-
-
-
-
-
-
-
-
-
