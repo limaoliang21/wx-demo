@@ -47,7 +47,7 @@
             },30);
         };
         //自我介绍
-        var str='  有一种路程叫万水千山，有一种情意叫海枯石烂。有一种约定叫天荒地老，有一种记忆叫刻骨铭心。有一种思念叫望穿秋水，有一种爱情叫至死不渝。有一种幸福叫天长地久，有一种拥有叫别无所求。有一种遥远叫天涯海角，有一种思念叫肝肠寸断，还有一种叫失恋无言以对。';
+        var str='  假如生活给了我们困难，无非只有一句话，向前冲，最穷无非讨饭，不死终会出头，上帝都是公平的，开头是苦的，假如你半路退出了，那就说明你已经输了，只有尝尽了苦头，你才有资格享受未来的甜蜜，我会哭会抱怨，但我相信我不会输！路是自己走的，无论再苦都必须要坚持下去，等到成功了才可以骄傲的告诉自己，我没有被挫折打败，我赢了！未来的路我会好好的努力的去走！有人问我后悔么？那我只能告诉你我的字典里没有后悔这两个字！';
         var oWord=document.getElementById('word');
         for(var i=0; i<str.length; i++){
             var oSpan=document.createElement('span');
@@ -154,12 +154,12 @@
         <div class="header-fixed" id="header-fixed">
            <div class="header-left">
                <span></span>
-               <ul>
+               <ul id="headerul">
                    <li><a href="#home">HOME</a></li>
                    <li><a href="#about">ABOUT</a></li>
                    <li><a href="#search">SEARCH</a></li>
                    <li><a href="#works">WORKS</a></li>
-                   <li><a href="#">4444</a></li>
+                   <li><a href="#contact">CONTACT</a></li>
                </ul>
            </div>
            <div class="header-right">
@@ -177,7 +177,6 @@
     </div>
 <!--搜索-->
     <div class="search" id="search">
-        <img class="hexa1" src="img/hexa1.png">
         <h4>What are you doing?</h4>
         <p id="p">听说世界那么大！让我们一起搜一下吧！</p>
         <div class="search-left">
@@ -203,8 +202,26 @@
             <li class="bottom">360影视</li>
         </ul>
     </div>
-<!---->
+<!--联系-->
+    <div class="contact" id="contact">
+        <p class="title">Get In Touch</p>
+        <div class="contact-left">
+            <p>DROP US A LINE</p>
+            <form action="https://www.baidu.com">
+                <input type="text" placeholder="Name" required="">
+                <input type="text" placeholder="Email" required="">
+                <input type="text" placeholder="Subject" required="">
+                <textarea placeholder="Message" required=""></textarea>
+                <input class="submit" type="submit" value="SEND IT">
+            </form>
+        </div>
 
+
+    </div>
+<!--底部-->
+    <div class="last">
+        <p>如果出现任何问题请与客服联系！ 电话：15210182780 扣扣：103661972 你的信任，是对我最大的保障！</p>
+    </div>
 <!--回到顶部-->
     <div class="totop" id="totop"><img src="img/top.png"></div>
 <!--背景音乐-->

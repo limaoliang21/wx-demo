@@ -3,14 +3,14 @@
 .clearfix {zoom:1;}
 /*回到顶部*/
 a {color:#ccc; font-size:25px;}
-.totop {width:50px; height:70px; background:red; box-shadow:1px 10px 10px #000; position:fixed; right:20px; bottom:50px; display:none; z-index:888;}
-.totop img {width:100%; height:100%; border-radius:15px; cursor:pointer;}
+.totop {width:50px; height:70px; position:fixed; right:20px; bottom:50px; display:none; z-index:888;}
+.totop img {width:100%; height:100%; border-radius:50%; cursor:pointer;}
 /*导航*/
 .header {width:100%; height:800px; position:relative;}
 .banner {width:100%; height:100%;}
 .log {width:95px; height:85px; background:url("../img/logo-2.png") no-repeat; position:absolute; top:100px; left:50%; margin-left:-48px;}
-.header h2 {width:100%; color:#fff; font-size:30px; position:absolute; top:200px; text-align:center;}
-.header h1 {width:100%;color:#fff; font-size:50px; position:absolute; top:280px; text-align:center;}
+.header h2 {width:100%; color:#fff; font-size:30px; font-family:"华文新魏"; position:absolute; top:200px; text-align:center;}
+.header h1 {width:100%;color:#fff; font-size:70px; font-family:"华文新魏"; position:absolute; top:280px; text-align:center;}
 .header .on {width:97px; height:108px; position:absolute; top:400px; left:50%; margin-left:-49px;}
 .header-fixed {width:100%; height:100px; position:absolute; left:0; bottom:30px;}
 .header-home {width:100%; height:100px; position:fixed; top:0px; left:0px; z-index:999; background:#222; opacity:.9; filter:alpha(opacity:90);}
@@ -22,16 +22,15 @@ a {color:#ccc; font-size:25px;}
 .header-right p {width:400px; height:80px; position:absolute; right:100px; top:10px; color:lavenderblush; text-shadow:1px 2px 3px #fff; text-align:center; line-height:90px; font-size:23px; font-family:"华文新魏";}
 /*关于我*/
 .about {width:100%; height:688px; background:url("../img/about-banner.jpg") no-repeat; position:relative;}
-.about h3 {width:100%; color:#fff; font-size:35px; font-family:"微软雅黑"; position:absolute; top:48px; text-align:center;}
+.about h3 {width:100%; color:#fff; font-size:50px; font-family:"华文新魏"; position:absolute; top:48px; text-align:center;}
 .introduce {width:80%; height:500px; background:#333; position:absolute; top:138px; left:50%; margin-left:-40%; border-radius:15px;}
 .photo {width:225px; height:300px; position:absolute; left:30px; top:100px;}
 .photo img {width:225px; height:300px; box-shadow:1px 10px 10px #ccc; border-radius: 15px; opacity:.3; cursor:pointer;}
-.word {width:70%; height:400px; position:absolute; right:30px; top:50px;}
+.word {width:70%; height:400px; position:absolute; right:26px; top:0px;}
 .word span {width:40px; height:40px; display:inline-block; opacity:0; font-size:35px; color:#fff; font-family:"华文新魏";}
 /*搜索*/
-.search {width:100%; height:750px; background:#222; position:relative;}
-.hexa1 {width:136px; height:155px; position:absolute; top:100px; left:50%; margin-left:-68px;}
-.search h4 {width:100%; font-size:42px; text-align:center; color:crimson; font-family:"微软雅黑"; position:absolute; top:100px;}
+.search {width:100%; height:750px; background:url("../img/blog-banner.jpg"); position:relative;}
+.search h4 {width:100%; font-size:50px; text-align:center; color:crimson; font-family:"华文新魏"; position:absolute; top:100px;}
 .search p {width:100%; font-size:38px; font-family:"华文彩云"; text-align:center; position:absolute; top:180px;}
 .search-left {width:50%; height:500px; position:absolute; top:300px;}
 .search-left img {margin-left:200px;}
@@ -60,15 +59,20 @@ a {color:#ccc; font-size:25px;}
 .carousel .right {transform:rotateY(90deg) translateZ(115px);}
 .carousel .top {transform:rotateX(90deg) translateZ(115px);}
 .carousel .bottom {transform:rotateX(-90deg) translateZ(115px);}
+/*联系*/
+.contact {width:100%; height:650px; background:#e1e1e1;}
+.contact .title {width:100%; height:180px; font-size:58px; color:red; font-family:"华文新魏"; text-align:center; line-height:180px;}
+.contact-left {width:50%; margin-left:100px; margin-top:50px;}
+.contact-left p {width:50%; font-size:28px; font-family:"华文新魏"; margin-bottom:10px;}
+.contact-left form input,.contact-left form textarea {width:50%; height:50px; border:none; resize:none; outline:none; display:block; border-bottom:3px solid #222; font-size:20px; background:#e1e1e1;}
+.contact-left input:hover,.contact-left textarea:hover {border-bottom:3px solid red;}
+.contact-left .submit {width:160px; height:50px; border-radius:50%; border:3px solid #222; margin-top:30px;}
+.contact-left .submit:hover {border:3px solid red; background:red; color:#fff;}
 
-
-
-
-
-
-
-
-
-
-
-
+/*底部*/
+.last {width:100%; height:50px; background:#222;}
+.last p {width:100%; height:50px; display:block; text-align:center; line-height:50px; font-size:23px;
+    background:-webkit-linear-gradient(left,yellow,green,red,orange,skyblue,yellow,green,red,orange,skyblue,yellow,green,red,orange,skyblue,yellow,green,red,orange,skyblue,yellow,green,red,orange,skyblue);
+    -webkit-background-clip:text;
+    color:rgba(0,0,0,0);
+}
