@@ -60,7 +60,7 @@ a {color:#ccc; font-size:25px;}
 .carousel .top {transform:rotateX(90deg) translateZ(115px);}
 .carousel .bottom {transform:rotateX(-90deg) translateZ(115px);}
 /*联系*/
-.contact {width:100%; height:650px; background:#e1e1e1;}
+.contact {position:relative; width:100%; height:700px; background:#e1e1e1;}
 .contact .title {width:100%; height:180px; font-size:58px; color:red; font-family:"华文新魏"; text-align:center; line-height:180px;}
 .contact-left {width:50%; margin-left:100px; margin-top:50px;}
 .contact-left p {width:50%; font-size:28px; font-family:"华文新魏"; margin-bottom:10px;}
@@ -68,7 +68,8 @@ a {color:#ccc; font-size:25px;}
 .contact-left input:hover,.contact-left textarea:hover {border-bottom:3px solid red;}
 .contact-left .submit {width:160px; height:50px; border-radius:50%; border:3px solid #222; margin-top:30px;}
 .contact-left .submit:hover {border:3px solid red; background:red; color:#fff;}
-
+.contact-right {position:absolute; right:200px; top:180px; width:400px; overflow:hidden; box-shadow:10px 8px 10px #000; height:500px; background:url("../img/1.jpg");}
+.contact-right i {position:absolute; left:0;top:0; width:100px; height:100px; border-radius:10px; background:url("../img/0.jpg") no-repeat; background-position:0 0;}
 /*底部*/
 .last {width:100%; height:50px; background:#222;}
 .last p {width:100%; height:50px; display:block; text-align:center; line-height:50px; font-size:23px;

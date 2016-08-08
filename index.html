@@ -56,11 +56,11 @@
         }
         var aSpan=oWord.children;
         var i=0;
-        var timer=setInterval(function(){
+        var timer1=setInterval(function(){
             move(aSpan[i],{opacity:.8});
             i++;
             if(i==str.length){
-                clearInterval(timer);
+                clearInterval(timer1);
             }
         },300);
         document.getElementById('pao').onclick=function(){
@@ -138,7 +138,51 @@
         aLi[5].onclick=function(){
             window.open('html/360movies.html');
         };
-        //
+        //底部
+        var oDiv3d=document.getElementById('div3d');
+        var R = 5;
+        var C = 4;
+        var len = R*C;
+        var bReady = true;
+        for(var r=0; r<R; r++){
+            for(var c=0; c<C; c++){
+                var oI=document.createElement('i');
+                oDiv3d.appendChild(oI);
+                oI.style.width = oDiv3d.offsetWidth/C + "px";
+                oI.style.height = oDiv3d.offsetHeight/R + "px";
+                oI.style.left = oI.offsetWidth*c + "px";
+                oI.style.top  = oI.offsetHeight*r + "px";
+                oI.style.backgroundPosition = -oI.offsetLeft+"px -"+oI.offsetTop+"px";
+            }
+        }
+        var iNow = 0;
+        var aI = oDiv3d.getElementsByTagName('i');
+        clearInterval(timer);
+        var timer=setInterval( function(){
+            if(!bReady) return ;
+            bReady = false;
+            iNow++;
+            for(var i = 0; i < len; i++){
+                var x = aI[i].offsetLeft + aI[i].offsetWidth/2 - oDiv3d.offsetWidth/2;
+                var y = aSpan[i].offsetTop + aI[i].offsetHeight/2 - oDiv3d.offsetHeight/2;
+                aI[i].style.transition = "1s all ease";
+                aI[i].style.transform = "translate("+x+"px,"+y+"px) rotateX("+rnd(-180,180)+"deg)  rotateY("+rnd(-180,180)+"deg)";
+                aI[i].style.opacity = "0";
+            }
+        },666);
+        aI[0].addEventListener("transitionend",function(){
+            for(var i = 0; i < len; i++){
+                aI[i].style.opacity = 1;
+                aI[i].style.transition = "none";
+                aI[i].style.transform = "translate(0px,0px) rotateX(0deg)  rotateY(0deg)";
+                aI[i].style.backgroundImage = "url(img/"+iNow%13+".jpg)";
+            }
+            oDiv3d.style.backgroundImage = "url(img/"+(iNow+1)%13+".jpg)";
+            bReady = true;
+        },false);
+        function rnd(n,m){
+            return Math.floor(Math.random()*(m-n)+n);
+        };
 
     }
 </script>
@@ -215,8 +259,7 @@
                 <input class="submit" type="submit" value="SEND IT">
             </form>
         </div>
-
-
+        <div class="contact-right" id="div3d"></div>
     </div>
 <!--底部-->
     <div class="last">
