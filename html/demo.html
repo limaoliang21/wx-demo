@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+body{background:#000; text-align:center;}
+canvas{background:url(img/game_bg_2_hd.jpg) no-repeat;}
+</style>
+<script src="js/sourse.js"></script>
+<script src="js/common.js"></script>
+<script src="js/sprite.js"></script>
+<script src="js/fish.js"></script>
+<script src="js/bullet.js"></script>
+<script src="js/cannon.js"></script>
+<script src="js/diefish.js"></script>
+<script>
+window.onload=function(){
+	var oC = document.getElementById('c1');
+	var gd = oC.getContext('2d');
+	loadImages(sourse,function(images){
+		var bottom = new Sprite(images.bottom);
+		bottom.width = 765;
+		bottom.height = 71;
+		bottom.x = oC.width/2;
+		bottom.y = oC.height-bottom.height/2;
+		
+		var cannon = new Cannon(images,1);
+		cannon.x = bottom.x+cannon.width/2+5;
+		cannon.y = bottom.y;
+		
+		oC.onmousemove=function(ev){
+			var a = ev.pageX-oC.offsetLeft-cannon.x;
+			var b = ev.pageY-oC.offsetTop-cannon.y;
+			
+			var r = a2d(Math.atan2(b,a))+90;
+			cannon.r = r;
+		};
+		
+		//存鱼
+		var aFish = [];
+		setInterval(function(){
+			var fish = new Fish(images,rnd(1,6));
+			fish.x = -100;
+			fish.y = rnd(0,oC.height);
+			fish.r = rnd(45,135);
+			aFish.push(fish);
+		},500);
+		
+		//存炮弹
+		var aBullet = [];
+		oC.onclick=function(){
+			var oA = new Audio();
+			oA.src = 'mp3/gunShot.mp3';
+			oA.play();
+			var bullet = new Bullet(images.bullet,cannon.type);
+			bullet.x = cannon.x;
+			bullet.y = cannon.y;
+			bullet.r = cannon.r;
+			aBullet.push(bullet);
+		};
+		
+		var aDieFish = [];
+		
+		//画图、运动
+		setInterval(function(){
+			gd.clearRect(0,0,oC.width,oC.height);
+			bottom.draw(gd);
+			//画炮弹
+			for(var i=0;i<aBullet.length;i++){
+				aBullet[i].move();
+				aBullet[i].draw(gd);
+			}
+			//画鱼
+			for(var i=0;i<aFish.length;i++){
+				aFish[i].move();
+				aFish[i].draw(gd);
+			}
+			
+			//检测炮弹位置
+			for(var i=0;i<aBullet.length;i++){
+				if(aBullet[i].x<0||aBullet[i].y<0||aBullet[i].x>oC.width||aBullet[i].y>oC.height){
+					aBullet.splice(i,1);
+					i--;
+				}
+			}
+			//检测鱼位置
+			for(var i=0;i<aFish.length;i++){
+				if(aFish[i].x<-100||aFish[i].y<0||aFish[i].x>oC.width||aFish[i].y>oC.height){
+					aFish.splice(i,1);
+					i--;
+				}
+			}
+			
+			
+			//鱼和炮弹的碰撞检测
+			for(var i=0;i<aBullet.length;i++){
+				for(var j=0;j<aFish.length;j++){
+					if(aBullet[i].collTest(aFish[j])){
+						
+						var dieFish = new DieFish(images,aFish[j].type);
+						dieFish.x = aFish[j].x;
+						dieFish.y = aFish[j].y;
+						dieFish.r = aFish[j].r;
+						aDieFish.push(dieFish);
+						
+						aBullet.splice(i,1);
+						aFish.splice(j,1);
+						
+						i--;
+						j--;
+					}
+				}
+			}
+			
+			//画死鱼
+			for(var i=0;i<aDieFish.length;i++){
+				aDieFish[i].draw(gd);
+			}
+			
+			//检测死鱼要不要消失
+			for(var i=0;i<aDieFish.length;i++){
+				if(aDieFish[i].die){
+					aDieFish.splice(i,1);
+					i--;
+				}
+			}
+			
+			cannon.draw(gd);
+		},16);
+		
+		setInterval(function(){
+			for(var i=0;i<aFish.length;i++){
+				aFish[i].swim();
+			}
+		},120);
+		
+	});
+};
+</script>
+</head>
+
+<body>
+	<canvas id="c1" width="800" height="600"></canvas>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
