@@ -34,7 +34,7 @@
             var aClass = [];
             for(var i = 0; i < len; i++){
                 aClass.push(aLi[i].className);
-            };
+            }
             oNext.onclick = function(){
                 if(!bReady) return;
                 bReady = false;
@@ -55,7 +55,7 @@
                 oCur.addEventListener("transitionend",function(){
                     bReady = true;
                 },false);
-            };
+            }
         }
     </script>
 </head>

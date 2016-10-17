@@ -1,4 +1,3 @@
-
 function Sprite(img){
 	this.img = img;
 	this.sx = 0;
@@ -39,11 +38,3 @@ Sprite.prototype.collTest = function(obj){
 		return false;
 	}
 };
-
-
-
-
-
-
-
-
