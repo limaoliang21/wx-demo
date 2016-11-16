@@ -17,8 +17,18 @@
     <script src="js/jquery-3.1.1.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('section').css('height',document.documentElement.clientHeight+'px');
+            $('.section').css('height',document.documentElement.clientHeight+'px');
+            $('.view').css('height',document.documentElement.clientHeight+'px');
 
+            //点赞成功提示
+            $('ul').each(function(i,elem){
+                $(elem).bind('touchend',function(){
+                    $(elem).find('li:first').show(1000);
+                    setTimeout(function(){
+                        $(elem).find('li:first').hide(1000)
+                    },1500)
+                })
+            })
         })
     </script>
 </head>
@@ -29,30 +39,37 @@
     <div class="box like7">
         <p>为你喜爱的嘉宾点赞！</p>
         <ul>
+            <li>+1</li>
             <li><img src="img/people.jpg" alt=""></li>
             <li>小明</li>
         </ul>
         <ul>
+            <li>+1</li>
             <li><img src="img/people.jpg" alt=""></li>
             <li>小兰</li>
         </ul>
         <ul>
+            <li>+1</li>
             <li><img src="img/people.jpg" alt=""></li>
             <li>小红</li>
         </ul>
         <ul>
+            <li>+1</li>
             <li><img src="img/people.jpg" alt=""></li>
             <li>李小黑</li>
         </ul>
         <ul>
+            <li>+1</li>
             <li><img src="img/people.jpg" alt=""></li>
             <li>张三</li>
         </ul>
         <ul>
+            <li>+1</li>
             <li><img src="img/people.jpg" alt=""></li>
             <li>李四</li>
         </ul>
         <ul>
+            <li>+1</li>
             <li><img src="img/people.jpg" alt=""></li>
             <li>王二</li>
         </ul>

@@ -17,8 +17,16 @@
     <script src="js/jquery-3.1.1.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('section').css('height',document.documentElement.clientHeight+'px');
+            $('.section').css('height',document.documentElement.clientHeight+'px');
+            $('.view').css('height',document.documentElement.clientHeight+'px');
 
+            //提交成功提示
+            $('.question_btn').bind('touchend',function(){
+                $('.new').show(1000);
+                setTimeout(function(){
+                    $('.new').hide(1000)
+                },2000)
+            })
         })
     </script>
 </head>
@@ -28,9 +36,10 @@
     <img class="logo" src="img/logo.jpg">
     <div class="box question_box">
         <p class="subject"><span>议题一：</span>双十一买什么好？</p>
-        <textarea class="content" name="" id="" cols="20" rows="8" placeholder="请写下你的问题..."></textarea>
+        <textarea class="content" name="" id="" cols="20" rows="8" placeholder="我想说：..."></textarea>
         <input class="question_btn" type="button" value="提交">
     </div>
+    <div class="new">恭喜你，你已成功提交！</div>
 </section>
 </body>
 </html>
