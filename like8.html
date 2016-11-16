@@ -23,10 +23,10 @@
             //点赞成功提示
             $('ul').each(function(i,elem){
                 $(elem).bind('touchend',function(){
-                    $(elem).find('li:first').show(1000);
+                    $(elem).find('li:first').show();
                     setTimeout(function(){
                         $(elem).find('li:first').hide(1000)
-                    },1500)
+                    },2500)
                 })
             })
 
